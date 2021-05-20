@@ -1,0 +1,252 @@
+/* Esse é o CSS do site WebDesign*/
+
+/* Normatização CSS */
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    color: #444;
+    font-size: 62.5%; /* gambiarra */
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*
+    Serve para arrumar o tamanho das boxes - problemas de soma com margin e padding.
+    Outro truque bacana de CSS para desing responsivo é o box-sinzing border box, acompanhado do seletor *. Basicamente esta regra diz que todos os elementos agora levarão em conta apenas a largura e altura determinada, sem somar a este valor a borda e o padding.
+*/
+
+a {
+    color: #00ccff;
+    font-size: 1.6em; /* 16px */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos principais */
+
+.containerGeral {
+    max-width: 1128px; /* contexto, ponto de partida */ 
+    margin: 0 auto;
+}
+
+img,
+figure,
+video,
+embed {
+    max-width: 100%;
+}
+
+header {
+    width: 100%;
+    height: 48px; /* altura não mexe */
+    margin-top: 3.6em; /* 36px */
+    margin-top: 3.6em; /* 36px */
+}
+
+.logo {
+    float: left;
+    width: 20.74%; /* 234px: objeto | 1128px: contexto || (obj/contexto)*100 */
+}
+
+nav {
+    float: right;
+    width: 74.47%; /* 840px: objeto | 1128px: contexto || (obj/contexto)*100 */
+}
+
+nav ul {
+    float: right;
+}
+
+nav li {
+    font-size: 1.2em; /* 12px */
+    display: inline-block;
+    margin-left: 2.0em;  /* 20px */
+    margin-top: 1.0em;  /* 10 px */
+}
+
+nav li a {
+   color: #999; 
+}
+
+.banner {
+    background: url('../img/banner.jpg');
+    height: 450px; /* altura não mexe */
+    margin-bottom: 4.8em; /* 48px */
+    position: relative;
+}
+
+.caixa {
+    position: absolute;
+    top: 48px;
+    background: rgba(0, 0, 0, 0.6);
+    width: 42.55%; /* 480px: objeto | 1128px: contexto || (obj/contexto)*100 - banner */
+    padding: 2.4em 1.0em 2.4em 4.0em; /* top right bottom left - 24px 10px 24px 40px*/
+    display: center;
+}
+
+h1 {
+    font-size: 4.0em;/* 40px */
+    color: #FFF;
+    font-weight: 200;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.pDestaque {
+    font-size: 1.8em;/* 18px */
+    color: #FFF;
+    font-weight: 200;
+}
+
+.infos {
+    width: 23.40%; /* 264px: obj | 1128px: contexto || (obj/contexto)*100*/
+    float: left;
+    margin-right: 2.4em; /* 24px */
+}
+
+.infos:last-child {
+    margin-right: 0;
+}
+
+.infos p {
+    text-align: justify;
+    font-size: 1.6em; /* 16px */
+}
+
+h2 {
+    font-size: 2.4em; /* 24px */
+    font-weight: 200;
+}
+
+footer {
+    width: 100%;
+    margin-top: 2.4em; /* 24px */
+    margin-bottom: 2.4em; /* 24px */
+}
+
+.pFooter {
+    font-size: 1.0em; /* 10px */
+    margin-bottom: 0;
+}
+
+/* Media Queries*/
+
+@media screen and (max-width: 1128px){
+    .containerGeral {
+        padding: 0 2.4em 0 2.4em;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .caixa {
+        width: 56%;
+    }
+    
+}
+
+@media screen and (max-width: 768px){
+    .caixa {
+        width: 65%;
+    }
+
+    .infos {
+        width: 48%;
+        margin-bottom: 2.4em;
+    }
+
+    .infos:nth-child(even){
+        margin-right: 0;
+    }
+
+    .logo {
+        width: 22%;
+        margin-top: 1.2em;
+    }
+}
+
+@media screen and (max-width: 718px){
+    .banner {
+        position: relative;
+        float: left;
+        margin: 0;
+        height: 150px;
+    }
+
+    .caixa {
+        position: relative;
+        display: block;
+        background: #000000;
+        width: 100%;
+        float: left;
+        margin-top: 100px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    nav {
+        width: 70%;
+    }
+
+    section {
+        margin-top: 450px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        float: left;
+        font-size: 0.8em;
+    }
+
+    nav li:first-child {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .infos {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .banner {
+        height: 120px;
+    }
+
+    .caixa {
+        position: relative;
+        display: block;
+        background: #000000;
+        width: 100%;
+        float: left;
+        margin-top: 80px;
+        padding: 1.2em 2em 1.2em 2em;
+    }
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
